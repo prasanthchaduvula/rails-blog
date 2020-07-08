@@ -23,6 +23,7 @@ class Home extends React.Component {
       .then((data) => {
         console.log(data);
         if (data.notice) {
+          this.setState({ logged_in: false });
           window.location.href = "/";
         }
       });
