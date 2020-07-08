@@ -13,7 +13,6 @@ class Index extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.notice) {
           window.location.href = `/articles/`;
         }
@@ -27,8 +26,9 @@ class Index extends React.Component {
     let { users, current_user, logged_in } = this.props;
     return (
       <div className="container py-5 list-unstyled">
+        <h5 className=" text-center my-3">List of Bloggers</h5>
         {users.map((user, index) => (
-          <div className="d-flex align-items-baseline mt-5">
+          <div className="d-flex align-items-baseline mt-5" key={index}>
             <h5>{index + 1}.</h5>
             <div className="ml-3">
               <h5>

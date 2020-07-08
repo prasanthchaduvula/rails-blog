@@ -10,14 +10,22 @@ class Index extends React.Component {
   render() {
     let { categories } = this.state;
     return (
-      <div>
-        {categories.map((category) => (
-          <li className="nav-item" key={category.id}>
-            <a className="nav-link" href={`/categories/${category.id}`}>
-              {category.name}
-            </a>
-          </li>
-        ))}
+      <div className="container my-5 list-unstyled">
+        <div className="d-flex my-5 justify-content-center">
+          <div className="col-8">
+            <h5 className="text-warning">List of Categories</h5>
+            {categories.map((category, index) => (
+              <div className="d-flex align-items-baseline mt-4" key={index}>
+                <h5>{index + 1}.</h5>
+                <h5>
+                  <a className="fs-2 ml-3" href={`/categories/${category.id}`}>
+                    {category.name}
+                  </a>
+                </h5>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     );
   }

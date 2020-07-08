@@ -41,7 +41,7 @@ class Login extends React.Component {
       <div className="container my-5">
         <div className="d-flex my-3 justify-content-center">
           <div className="col-8">
-            <h5 className=" text-warning">Sign In</h5>
+            <h5 className=" text-center">Sign In</h5>
             <div className="my-3">
               {errors ? (
                 <li className=" list-group-item list-group-item-danger text-center">

@@ -27,34 +27,32 @@ class Show extends React.Component {
     const { articles, user, logged_in, current_user } = this.props;
     return (
       <div className="container py-5 list-unstyled">
-        <h5 className="mt-5">Profile page</h5>
-        <div className="d-flex align-items-baseline mt-2">
-          <h4>
-            <a href={`/users/${user.id}`} className="fs-2 pr-3">
-              {user.name}
-            </a>
-          </h4>
-          <div className="d-flex mt-2">
-            {logged_in && (current_user.id == user.id || current_user.admin) ? (
-              <div className="d-flex ">
-                <li>
-                  <a
-                    href={`/users/${user.id}/edit`}
-                    className="pr-3 text-warning"
-                  >
-                    Edit Profile
-                  </a>
-                </li>
-                <li onClick={(e) => this.handleDelete(e, user.id)}>
-                  <a href="" className="pr-3 text-danger">
-                    Delete Profile
-                  </a>
-                </li>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+        <h5 className=" text-center my-3">Profile Page</h5>
+        <h4 className="text-center  mt-2">
+          <a href={`/users/${user.id}`} className="fs-2 pr-3 text-dark">
+            {user.name}
+          </a>
+        </h4>
+        <div className="d-flex justify-content-center align-items-baseline mt-2">
+          {logged_in && (current_user.id == user.id || current_user.admin) ? (
+            <div className="d-flex ">
+              <li>
+                <a
+                  href={`/users/${user.id}/edit`}
+                  className="pr-3 text-warning"
+                >
+                  Edit Profile
+                </a>
+              </li>
+              <li onClick={(e) => this.handleDelete(e, user.id)}>
+                <a href="" className="pr-3 text-danger">
+                  Delete Profile
+                </a>
+              </li>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         {articles.map((article, index) => (
           <div className="d-flex align-items-baseline mt-5" key={index}>

@@ -46,7 +46,7 @@ class Edit extends React.Component {
             <a href={`/articles/${article.id}`} className="py-3 text-success">
               Go back to article
             </a>
-            <h5 className=" text-warning">Edit Article</h5>
+            <h5 className="text-center my-3">Edit Article</h5>
             <div className="my-3">
               {errors
                 ? errors.map((msg) => (

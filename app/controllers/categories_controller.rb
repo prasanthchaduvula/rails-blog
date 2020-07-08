@@ -23,8 +23,8 @@ class CategoriesController < ApplicationController
     if @category.save
       render status: :ok, json: {notice: "created successfully"}
     else
-      render status: :unprocessble_entity, 
-      json: {error: "creating catgeory failed"}
+      render status: :unprocessable_entity, 
+      json: { errors: @category.errors.full_messages} 
     end
   end
 

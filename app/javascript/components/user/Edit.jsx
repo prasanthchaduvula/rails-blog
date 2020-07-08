@@ -27,7 +27,6 @@ class Edit extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.notice) {
           window.location.href = `/users/${this.state.user.id}`;
         }
@@ -46,7 +45,7 @@ class Edit extends React.Component {
             <a href={`/users/${user.id}`} className="py-3 text-success">
               Go back to profile
             </a>
-            <h5 className=" text-warning mt-3 text-center">Edit profile</h5>
+            <h5 className=" mt-3 text-center">Edit profile</h5>
             <div className="my-3">
               {errors
                 ? errors.map((msg, index) => (

@@ -1,1 +1,2 @@
-<%= react_component("categories/Show", category: @category, articles: @articles)%>
+<%= react_component("categories/Show", category: @category)%>
+<%= react_component("articles/Index", JSON.parse(render(template: "articles/index.json.jbuilder")))%>
