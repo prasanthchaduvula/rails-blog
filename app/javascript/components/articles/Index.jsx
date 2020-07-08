@@ -24,10 +24,10 @@ class Index extends React.Component {
   };
 
   render() {
-    let { articles, current_user, logged_in } = this.props;
+    let { articles } = this.props;
     return (
       <div className="container py-5 list-unstyled">
-        {articles.map(({ article, name }, index) => (
+        {articles.map(({ article, name, current_user, logged_in }, index) => (
           <div className="d-flex align-items-baseline mt-5">
             <h5>{index + 1}.</h5>
             <div className="ml-3">
