@@ -2,14 +2,6 @@ import React from "react";
 import { func } from "prop-types";
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current_user: this.props.current_user,
-      logged_in: this.props.logged_in,
-    };
-  }
-
   handleDelete = () => {
     fetch("/logout", {
       method: "DELETE",
@@ -29,7 +21,7 @@ class Home extends React.Component {
       });
   };
   render() {
-    let { current_user, logged_in } = this.state;
+    let { current_user, logged_in } = this.props;
     return (
       <div className="container">
         <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
@@ -114,6 +106,11 @@ class Home extends React.Component {
                     ""
                   )}
                 </div>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/howtotest">
+                  Credentials
+                </a>
               </li>
               {logged_in ? (
                 <>
